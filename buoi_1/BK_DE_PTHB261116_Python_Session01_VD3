@@ -1,0 +1,15 @@
+"""
+    input/output
+Họ và tên bệnh nhân 
+Mã bệnh án (Định dạng nội bộ, ví dụ: BN1024, BA9901...) 
+Khoa/Phòng khám chỉ định (Ví dụ: Khoa Nội, Phòng Khám Mắt, Răng Hàm Mặt...) 
+đầu vào đều có kiểu sữ liệu là string
+định dạng đầu ra là 1 chuỗi "Bệnh nhân: [Họ tên] - Mã BA: [Mã bệnh án] - Chuyển tới: [khoa/Phòng khám]
+    giải pháp
+dùng nối chuỗi để in ra màn hình
+"""
+ho_ten = input("Họ tên : ")
+ma_benh_an =input("Mã bệnh án: ")
+khoa_phong_kham = input("Khoa/Phong kham: ")
+print()
+print("Bện nhân: " + ho_ten + " - " + "Mã BA: " + ma_benh_an + " - " + "Chuyển tới: " + khoa_phong_kham)
