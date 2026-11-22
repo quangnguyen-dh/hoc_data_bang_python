@@ -1,1 +1,17 @@
+print(" --- HỆ THỐNG TIẾP NHẬN BỆNH NHÂN --- ")
+name_patient = input("Nhập tên bệnh nhân           : ")
+age = int(input("Mời bạn nhập tuổi            : "))
+symptom = input("Mời bạn nhập triệu chứng bệnh: ")
 
+print(" --PHIẾU KHÁM BỆNH ---")
+print("Tên bệnh nhân:",name_patient)
+print("Tuổi         :",age)
+print("Triệu chứng  :",symptom)
+""" 
+luồng thự thi 
+    1 in ra màn hình lời chào cảu hệ thống
+    2 3 dòng tiếp theo là nhập lần lượt thông tin tên, tuổi( điều kiện là số nguyên), triệu chứng.
+    3 in ra in ra màn hình phiếu khám bệnh gồm các thống tin lần lượt theo thứ tự nhập.
+lỗi sai ban đầu cảu đoạn code là 
+    in sai thứ tự các thống tin
+"""
