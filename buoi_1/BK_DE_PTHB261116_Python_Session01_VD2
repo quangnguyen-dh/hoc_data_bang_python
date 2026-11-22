@@ -1,0 +1,18 @@
+print("--- HỆ THỐNG NHẬP CHỈ SỐ SINH TÔN ---")
+name_patient = input("Nhập tên bệnh nhân      : ")
+weight = float(input("Nhập cân nặng bệnh nhân :"))
+print()
+print("--- KIỂM TRA DỮ LIỆU LƯU TRỮ --- ")
+print("Bệnh nhân                   :",name_patient)
+print("Dữ liệu mở rộng có thể nặng :", weight)
+print()
+# Trưởng nhóm IT viết thêm dòng này để kiểm tra dữ liệu của cân nặng
+print("CẢNH BÁO - Lưu trữ dữ liệu kiểu :",type(weight))
+"""
+luồng thực thi là
+    1 lời chào hệ thống
+    2 nhập thông tin 
+    3 in ra dữ liệu để kiểm tra
+hàm input() trong python là 
+    hàm nhập dữ liệu từ bàn phím và mặc định thì kiểu dữ liệu sẽ là string
+"""
