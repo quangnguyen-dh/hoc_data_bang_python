@@ -1,0 +1,25 @@
+import random
+
+
+ten_BN = input("nhập tên bệnh nhân: ")
+gioi_tinh = input("nhập giới tính: ")
+nam_sinh = input("nhập năm sinh: ")
+sdt = input("nhập số điện thoại: ")
+email = input("nhập email: ")
+trieu_chung_ban_dau = input("nhập triệu chứng ban đầu: ")
+chi_phi_kham = input("chi phí khám: ")
+
+chi_phi_kham = float(chi_phi_kham)
+so_ngau_nhien = random.randint(100, 999)
+ma_BN = "BN" + str(nam_sinh) + str(so_ngau_nhien)
+print("\n--- THẺ BỆNH NHÂN ---")
+print()
+print("Mã BN       : " + ma_BN)
+nam_sinh = int(nam_sinh)
+print("Tên        :" + ten_BN + "(" + str(type(ten_BN).__name__) + ")" )
+print("Giới tính  :" + gioi_tinh + "(" + str(type(gioi_tinh).__name__) + ")")
+print("Năm Sinh   :" + str(nam_sinh) + "(" + str(type(nam_sinh).__name__) + ")")
+print("Điện thoại :" + sdt + "(" + str(type(sdt).__name__) + ")")
+print("Email      :" + email + "(" + str(type(email).__name__) + ")")
+print("Triệu chứng:" + trieu_chung_ban_dau + "(" + str(type(trieu_chung_ban_dau).__name__) + ")")
+print("Chi phí    :" + str(chi_phi_kham) + "(" + str(type(chi_phi_kham).__name__) + ")")
