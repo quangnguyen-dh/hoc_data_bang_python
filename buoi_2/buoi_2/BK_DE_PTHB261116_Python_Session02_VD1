@@ -1,0 +1,16 @@
+"""
+khi test với nhịp tim = 137 ta thấy ko hiện đúng
+- lý do vì dòng if đầu tiền là heart_rate>100 nó đã bao gồm cảm >120 trong đó lên khối lệnh RED sẽ bị bỏ qua
+"""
+print("- HỆ THỐNG PHÂN LOẠI KHẨN CẤP ---")
+heart_rate = int(input("Nhập nhịp tim của bệnh nhân (bpm): "))
+if(heart_rate> 120):
+    print("Mức độ ưu tiên: Đỏ (RED) — Nguy kịch, cấp cứu ngay")
+elif (heart_rate > 100):
+    print("Mức độ ưu tiên: Vàng (YELLOW) — Bất thường, cần theo dõi sát")
+elif (heart_rate >= 60 and heart_rate <=100):
+    print("Mức độ ưu tiên: Xanh lá (GREEN) — Ổn định, chờ theo thứ tự")
+else:
+    print("Mức độ ưu tiên:  Xanh dương (BLUE) — Nhịp tim chậm, cần kiểm tra thêm")
+print()
+print("Quá trình phân loại bệnh nhân đã hoàn tất.")
