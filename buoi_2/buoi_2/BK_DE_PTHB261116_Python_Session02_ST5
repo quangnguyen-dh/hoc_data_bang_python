@@ -1,0 +1,33 @@
+patient_name = input("Nhập họ và tên bệnh nhân (VD: Nguyen Van An): ").strip()
+patient_age = int(input("Nhập tuổi bệnh nhân - số nguyên (VD: 35): ").strip())
+spo2_level = int(input("Nhập nồng độ oxy trong máu SpO2 (%) - số nguyên (VD: 98): ").strip())
+heart_rate = int(input("Nhập nhịp tim (nhịp/phút) - số nguyên (VD: 76): ").strip())
+has_insurance = input("Bạn có thẻ BHYT không? (Vui lòng chỉ gõ 'yes' hoặc 'no'): ").strip().lower()
+
+if spo2_level < 90 or heart_rate > 120:
+    triage_status = "Báo động ĐỎ (Cấp cứu khẩn)"
+elif (90 <= spo2_level <= 95) or (100 <= heart_rate <= 120):
+    triage_status = "Báo động VÀNG (Theo dõi sát)"
+else:
+    triage_status = "XANH (Khám thường)"
+
+if patient_age < 6 or patient_age >= 80:
+    deposit_fee = 0
+    billing_note = "Miễn phí (Trẻ em dưới 6 tuổi hoặc người từ 80 tuổi trở lên)"
+elif has_insurance == "yes":
+    deposit_fee = 250000
+    billing_note = "Giảm 50% (Có thẻ BHYT)"
+else:
+    deposit_fee = 500000
+    billing_note = "Thu 100% mức phí cơ bản (500,000 VNĐ)"
+
+print("\n================ PHIẾU TIẾP NHẬN KIOSK ================")
+print("Họ và tên      :", patient_name)
+print("Tuổi           :", patient_age)
+print("SpO2           :", f"{spo2_level}%")
+print("Nhịp tim       :", f"{heart_rate} nhịp/phút")
+print("Có thẻ BHYT    :", has_insurance)
+print("Phân luồng     :", triage_status)
+print("Tạm ứng phí    :", f"{deposit_fee:,} VNĐ")
+print("Ghi chú viện phí:", billing_note)
+print("========================================================")
