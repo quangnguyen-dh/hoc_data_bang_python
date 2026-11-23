@@ -1,0 +1,13 @@
+#đoạn mã nguồn lúc đầu vấn tính cả số tiền thường với người làm 0 ngày vì để tính tiền và gửi email ở ngoài điều kiện nên tất cả mọi trường hợp đều dc gửi amil và tính tiền thưởng
+print("--- HỆ THỐNG GỬI EMAIL THƯỞNG TẾT ---")
+for employee_number in range (1, 4):
+    print("-- Đang xử lý số nhân viên", employee_number, "---")
+    working_days = int(input("Nhập số ngày công việc trong tháng: "))
+    if working_days == 0:
+        print("CẢNH BÁO: Nhân viên nghi cả tháng. Không có trình duyệt bình thường.")
+    else:
+        bonus_amount = working_days * 200000
+        print("→ Đã gửi Email: Chúc mừng nhận thuốc", bonus_amount, "VND tiên thường!")
+        print("------------------------------------------")
+        print()
+print("Đã hoàn tất quá trình duyệt cho 3 nhân viên!")
