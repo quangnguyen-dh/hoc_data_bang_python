@@ -1,0 +1,74 @@
+import datetime
+import sys
+from datetime import datetime
+nam_hien_tai = datetime.now().year
+ten_benh_nhan = input("Nhập tên bệnh nhân: ")
+nam_sinh = int(input("Nhập năm sinh: "))
+so_ngay_benh = int(input("Nhập số ngày bị bệnh: "))
+nhiet_do_co_the = int(input("Nhập Nhiệt độ cơ thể (độ C): "))
+nhap_chi_phi_kham = int(input("Nhập chi phí khám: "))
+print()
+#kiểm tra tính hợp lệ cảu dữ liệu input
+print("---Kiểm tra tính lợp lệ của dữ liệu---")
+test_ten = ""
+if(ten_benh_nhan==test_ten):
+    print("---Thông tin tên không hợp lệ. Mời nhập lại.---")
+    sys.exit(0)
+elif(nam_sinh<1900 or nam_sinh>nam_hien_tai):
+    print("---Thông tin năm sinh không hợp lệ. Mời nhập lại.---")
+    sys.exit(0)
+elif(so_ngay_benh<0):
+    print("---Thông tin số ngày bệnh không hợp lệ. Mời nhập lại.---")
+    sys.exit(0)
+elif( nhiet_do_co_the<30 or nhiet_do_co_the>45):
+    print("---Thông tin nhiệt độ cơ thể không hợp lệ. Mời nhập lại.---")
+    sys.exit(0)
+elif(nhap_chi_phi_kham<0):
+    print("---Thông tin chi phí khám không hợp lệ. Mời nhập lại.---")
+    sys.exit(0)
+else:
+    print("---Kiểm tra thông tin thành công---")
+# tính toán thông tin
+tuoi_benh_nhan = nam_hien_tai-nam_sinh
+phu_phi = nhap_chi_phi_kham*0.1
+tong_chi_phi = nhap_chi_phi_kham + phu_phi
+# phân loại sức khỏe
+tinh_trang_suc_khoe=""
+if(nhiet_do_co_the>38):
+    tinh_trang_suc_khoe = "Sốt cao"
+    if(so_ngay_benh>3):
+        tinh_trang_suc_khoe = "Nguy hiểm"
+elif(nhiet_do_co_the>37.5):
+    tinh_trang_suc_khoe = "Sốt nhẹ"
+else:
+    tinh_trang_suc_khoe = "Bình thường"
+# đánh giá mức độ ưu tiên 
+muc_do_ưu_tien=""
+if(tinh_trang_suc_khoe=="Nguy hiểm"):  
+    if(tuoi_benh_nhan>60):
+        muc_do_ưu_tien = "Cấp cứu"
+    else:
+        muc_do_ưu_tien = "Ưu tiên cao"
+else:
+    muc_do_ưu_tien = "Bình thường"
+# đánh giá chi phí
+danh_gia_chi_phi = ""
+if(tong_chi_phi>500000):
+    danh_gia_chi_phi = "Cao"
+else:
+    danh_gia_chi_phi = "Thấp"
+print()
+# in phiếu khám
+print("--- KẾT QUẢ ---")
+print("Tên         : ",ten_benh_nhan)
+print("Tuổi        : ",tuoi_benh_nhan)
+print("NHiệt độ    : ",nhiet_do_co_the)
+print("Số ngày bệnh: ",so_ngay_benh)
+print()
+print("Tình Trạng    : ",tinh_trang_suc_khoe)
+print("Mức độ ưu tiên: ",muc_do_ưu_tien)
+print()
+print("Tổng chi phí: ",tong_chi_phi)
+print("Mức chi phí : ",danh_gia_chi_phi)
+print("---- KẾT THÚC ----") 
+
