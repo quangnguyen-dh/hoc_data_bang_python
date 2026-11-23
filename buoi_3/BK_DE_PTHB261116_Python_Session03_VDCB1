@@ -1,0 +1,8 @@
+# mã nguồn ban đầu sai vì để total_budget = 0 tròng vòng for nên mỗi chạy total_budget đều về bằng 0 nên lúc cuối chỉ in mức lương người cuối cùng
+print("--- PHẦN MỀM TÍNH TỐNG QUỸ LƯƠNG ---")
+total_budget = 0
+for i in range(1,4):
+    print("Đang xử lý nhân viên số", i)
+    salary = int(input("Nhập mức lương (VND): "))
+    total_budget = total_budget + salary
+print("→ KẾT QUẢ: TỔNG NGÂN SÁCH CẦN CHUẨN BỊ LÀ:", total_budget, "VND")
