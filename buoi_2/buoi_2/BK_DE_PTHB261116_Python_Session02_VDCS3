@@ -1,0 +1,27 @@
+import sys
+
+ho_ten = input("Nhập họ và tên bệnh nhân: ").strip()
+tuoi_nhap = input("Nhập tuổi bệnh nhân: ").strip()
+
+if (ho_ten == "" or tuoi_nhap == ""):
+    print("LỖI: Tên không hợp lệ hoặc Tuổi không hợp lệ!")
+    sys.exit
+
+tuoi_nhap = int(tuoi_nhap)
+if(tuoi_nhap<0 or tuoi_nhap>150):
+    print("LỖI: Tuổi nằm ngoài phạm vi con người (0-150)!")
+    sys.exit
+
+if (tuoi_nhap < 6):
+    phan_luong = "ƯU TIÊN bệnh nhi - Chuyển thẳng phòng khám Nhi."
+elif (tuoi_nhap >= 80):
+    phan_luong = "ƯU TIÊN người cao tuổi - Hỗ trợ xe lăn, chuyển phòng khám Lão khoa."
+else:
+    phan_luong = "KHÁM THƯỜNG vui lòng lấy số thứ tự và chờ tới lượt tại sảnh."
+
+print("\n================ PHIẾU KHÁM BỆNH ĐIỆN TỬ ================")
+print("Phòng khám Đa khoa: Sức Khỏe Vàng")
+print("Họ và tên:", ho_ten)
+print("Tuổi:", tuoi_nhap)
+print("Phân luồng:", phan_luong)
+print("===========================================================")
