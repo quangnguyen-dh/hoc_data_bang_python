@@ -1,0 +1,8 @@
+print(" HỆ THỐNG SÀNG LỌC NGƯỜI HIẾN MÁU -")
+donor_age = int(input("Nhập tuổi của người hiến tặng: "))
+donor_weight = float(input("Nhập cân nặng của người hiến tặng (kg): "))
+if donor_age>=18 and donor_weight >=50:
+    print("Kết quả: ĐỦ ĐIỀU KIỆN. Vui lòng đến phòng hiến máu.")
+else:
+    print("Kết quả: KHÔNG ĐỦ ĐIỀU KIỆN. Cảm ơn bạn đã quan tâm.")
+# sai vì nhầm chỗ toán tử quan hệ chon "and" mới đúng
