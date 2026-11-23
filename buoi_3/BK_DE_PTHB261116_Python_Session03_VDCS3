@@ -1,0 +1,23 @@
+import sys
+
+
+i=3
+while(i>0):
+    print("Nhân viên số ", i)
+    i=i-1
+    ma_nv = input("Nhập mã nhân viên: ").strip()
+    ho_ten = input("Nhập họ và tên nhân viên: ").strip()
+    phong_ban_cong_tac = input("Phòng ban công tác: ").strip()
+    if(ma_nv=="" or ho_ten==""):
+        i=i+1
+        print("[CẢNH BÁO] Dữ liệu tên hoặc mã không hợp lệ! Hủy bỏ tạo hồ sơ vừa rồi cho nhân viên này.")
+        print("Hãy tạo lại hồ sơ cho nhân viên này!")
+        print()
+        continue
+    print()
+    print("--- PHIẾU HỒ SƠ DIỆN TỬ ---")
+    print("Mã nhân viên: ", ma_nv)
+    print("Họ và tên nhân viên: ", ho_ten)
+    print("Phòng ban công tác: ", phong_ban_cong_tac)
+    print()
+sys.exit()
