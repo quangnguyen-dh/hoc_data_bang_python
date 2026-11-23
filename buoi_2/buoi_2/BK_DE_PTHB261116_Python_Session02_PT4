@@ -1,0 +1,19 @@
+import sys
+
+tuoi = input("Nhập tuổi: ").strip()
+huyet_ap = input("Nhập huyết áp tâm thu (mmHg): ").strip()
+duong_huyet = input("Nhập đường huyết (mg/dL): ").strip()
+if(tuoi=="" or huyet_ap=="" or duong_huyet==""):
+    print("Dữ liệu nhập vào không hợp lệ")
+    sys.exit
+tuoi = int(tuoi)
+huyet_ap = int(huyet_ap)
+duong_huyet = int(duong_huyet)
+if tuoi < 0 or huyet_ap < 0 or duong_huyet < 0:
+    print("Dữ liệu nhập vào không hợp lệ")
+    sys.exit
+
+if tuoi < 75 and 90 <= huyet_ap <= 140 and duong_huyet < 150:
+    print("ĐỦ ĐIỀU KIỆN PHẪU THUẬT")
+else:
+    print("TỪ CHỐI PHẪU THUẬT")
