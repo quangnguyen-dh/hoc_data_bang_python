@@ -1,0 +1,75 @@
+print("==========================================")
+print("   KIOSK HR: CẬP NHẬT HỒ SƠ VÀ ĐÁNH GIÁ   ")
+print("==========================================")
+# đánh giá xem còn nhân viên nào cần nhập thông tin không bằng biến con_nhan_vien_khong = ("y"/"n")
+con_nhan_vien_khong = "y"
+while(con_nhan_vien_khong == "y"):
+    print("[Nhập thông tin nhân viên]")
+    # kiểm tra thông tin id
+
+    thong_tin_id = False
+    while(thong_tin_id == False):
+        id = input("Enter Employee ID: ").strip()
+        if(id == ""):
+            print("[!] LỖI: chưa điền id hoặc id hông hợp lệ. Vui lòng nhập lại")
+        else:
+            thong_tin_id = True
+    # kiểm tra thông tin name
+
+    thong_tin_name = False
+    while(thong_tin_name == False):
+        name = input("Enter Full Name: ").strip()
+        if(name == ""):
+            print("[!] LỖI: chưa điền tên hoặc tên hông hợp lệ. Vui lòng nhập lại")
+        else:
+                thong_tin_name = True
+    # kiểm tra thông tin lương
+    
+    thong_tin_Salary = False
+    while(thong_tin_Salary == False):
+        Salary = int(input("Enter current Salary in VND (Number > 0): "))
+        if(Salary <= 0):
+            print("[!] LỖI: lương không thể âm hoặc bằng 0. Vui lòng nhập lại")
+        else:
+            thong_tin_Salary = True
+    # kiểm tra thông tin KPI
+    
+    thong_tin_kpi = False
+    while(thong_tin_kpi == False):
+        kpi_score = float(input("Enter Performance Score (1.0 to 5.0): "))
+        if(kpi_score<1.0 or kpi_score>5.0):
+            print("[!] LỖI: điểm KPt phải nằm trong khoảng từ 1.0 đến 5.0!. Vui lòng nhập lại")
+        else:
+            thong_tin_kpi = True
+    # kiểm tra thông tin số năm kinh nghiệm
+    
+    thong_tin_ex = False
+    while(thong_tin_ex == False):
+        experience = int(input("Enter Year of Experience ( Integer >= 0): "))
+        if(experience<0):
+            print("[!] LỖI: số năm kinh nghiệm phải lớn hơn hoặc bằng 0. Vui lòng nhập lại")
+        else:
+            thong_tin_ex = True
+    # hiển thị thông tin 
+    print()
+    print("==========================================")
+    print("            E-PROFILE CẬP NHẬT            ")
+    print("==========================================")
+    print("- ID:", id)
+    print("- Name:", name)
+    print("- Salary:", Salary)
+    print("- KPI Score:", kpi_score)
+    print("- Experience:", experience)
+    # hiển thị kiểm tra kiểu sữ liệu
+    print("==========================================")
+    print("              IT SYSTEM LOG               ")
+    print("==========================================")
+    print("employee_id        |",type(id))
+    print("employee_name      |",type(name))
+    print("curent_salary      |", type(Salary))
+    print("performance_score  |", type(kpi_score))
+    print("experience_years   |", type(experience))
+    print("------------------------------------------")
+    # điều kiện vòng lặp nhập thông tin nhân viên khác
+    con_nhan_vien_khong = input("Do you want to enter another employee? (y/n): ")
+print("Đang tắt Kiosk... Tạm biệt!")
