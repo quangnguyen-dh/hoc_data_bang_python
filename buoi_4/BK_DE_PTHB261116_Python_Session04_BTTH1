@@ -1,0 +1,8 @@
+tong_tien = int(input("Nhập tổng tiền hóa đơn ban đầu: "))
+print("--- HÓA ĐƠN THÀNH TOÁN RIKKET STORE ---")
+so_tien_giam = 0
+if(tong_tien>5000000):
+    so_tien_giam = int(tong_tien*0.1)
+    tong_tien = int(tong_tien*0.9)
+print("Số tiền được giảm giá:", so_tien_giam, "VND")
+print("Tổng tiền khách phải trả:", tong_tien, "VND")
