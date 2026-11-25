@@ -1,0 +1,13 @@
+so_don = int(input("Nhập số đơn trong ca: "))
+# vì giá trị đơn hàng luôn lớn hơn 0 nên để max=0 để dễ so sánh và cập nhật giá trị mã mới qua mỗi vòng lặp
+max=0
+# ở đây với giả thiết là đơn hàng có giá trị không quá 999999999 VND. Qua mỗi vòng lặp giá trị min mới sẽ dc cập nhật
+min=999999999
+for don_thu in range(1, so_don+1):
+    print("Nhập giá trị hóa đơn thư", str(don_thu)+": ", end="")
+    gia_tri_don = int(input())
+    if(max<gia_tri_don): max=gia_tri_don
+    if(min>gia_tri_don): min=gia_tri_don
+print("----- KẾT QUẢ KIỂM TRA RIKKEI STORE -----")
+print("Hóa đơn có giá trị cao nhất:", max)
+print("Hóa đơn có giá trị thấp nhất:", min)
