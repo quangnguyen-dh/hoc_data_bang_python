@@ -1,0 +1,13 @@
+dem=0
+tong_doanh_thu=0
+for ngay in range(1,8):
+    print("Nhập doanh thu Ngày", str(ngay)+": ", end="")
+    doanh_thu_ngay = int(input())
+    if(doanh_thu_ngay>=5000000):
+        dem = dem+1
+    tong_doanh_thu = tong_doanh_thu + doanh_thu_ngay
+doanh_thu_tb = int(tong_doanh_thu/7)
+print("----- BÁO CÁO DOANH THU TUẦN RIKKEI STORE -----")
+print("Tổng doanh thu cả tuần:", tong_doanh_thu, "VND")
+print("Doanh thu trung bình mỗi ngày:", doanh_thu_tb, "VND")
+print("Số ngày đạt doanh thu mục tiêu (>= 5,000,000 VND):", dem)
