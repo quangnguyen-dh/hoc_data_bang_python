@@ -1,0 +1,80 @@
+while True:
+    print("=== HỆ THỐNG QUẢN LÝ THỐNG KÊ HỌC VIÊN ===")
+    print("1. Nhập dữ liệu và xem báo cáo thống kê")
+    print("2. Hiển thị hướng dẫn sử dụng")
+    print("3. Thoát chương trình")
+
+    choice = int(input("Chọn chức năng (1-3): "))
+
+    if choice == 1:
+        while True:
+            branch_count = int(input("Nhập số lượng chi nhánh: "))
+            if branch_count > 0:
+                break
+            print("Số lượng chi nhánh phải lớn hơn 0. Vui lòng nhập lại.")
+
+        max_students = -1
+        best_branches = []
+        low_attendance_classes = []
+        branch_summaries = []
+
+        for branch in range(1, branch_count + 1):
+            print(f"\n--- Chi nhánh {branch} ---")
+            while True:
+                class_count = int(input(f"Nhập số lớp học của Chi nhánh {branch}: "))
+                if class_count >= 0:
+                    break
+                print("Số lớp học không hợp lệ. Vui lòng nhập lại.")
+
+            branch_total = 0
+
+            for cls in range(1, class_count + 1):
+                while True:
+                    students = int(input(f"Nhập số học viên của Lớp {cls}: "))
+                    if students >= 0:
+                        break
+                    print("Số học viên không thể là số âm. Vui lòng nhập lại.")
+
+                branch_total = branch_total + students
+
+                if students < 10:
+                    low_attendance_classes.append(
+                        f"Chi nhánh {branch} - Lớp {cls} ({students} học viên)"
+                    )
+
+            branch_summaries.append((branch, branch_total))
+
+            if branch_total > max_students:
+                max_students = branch_total
+                best_branches = [branch]
+            elif branch_total == max_students:
+                best_branches.append(branch)
+
+        print("\n=== BÁO CÁO THỐNG KÊ ===")
+        for branch, total in branch_summaries:
+            print(f"- Chi nhánh {branch}: {total} học viên")
+
+        best_str = ", ".join(f"Chi nhánh {b}" for b in best_branches)
+        print(f"- Chi nhánh có tổng số học viên cao nhất: {best_str} ({max_students} học viên)")
+
+        if len(low_attendance_classes) > 0:
+            print("- Danh sách các lớp có sĩ số dưới 10 học viên:")
+            for item in low_attendance_classes:
+                print(f"  + {item}")
+        else:
+            print("- Không có lớp nào có sĩ số dưới 10 học viên (tất cả các lớp đều từ 10 học viên trở lên).")
+        print()
+
+    elif choice == 2:
+        print("\n--- HƯỚNG DẪN SỬ DỤNG ---")
+        print("1. Chọn chức năng 1 để nhập số chi nhánh, số lớp từng chi nhánh và sĩ số từng lớp.")
+        print("2. Số học viên phải là số nguyên không âm (>= 0).")
+        print("3. Hệ thống tính tổng học viên từng chi nhánh, tìm chi nhánh đông nhất và liệt kê lớp dưới 10 học viên.")
+        print("4. Chọn chức năng 3 để thoát chương trình.\n")
+
+    elif choice == 3:
+        print("Thoát chương trình")
+        break
+
+    else:
+        print("Lựa chọn không hợp lệ. Vui lòng nhập lại.\n")
