@@ -1,0 +1,20 @@
+branch_count = int(input("Nhập số lượng chi nhánh: "))
+class_count = 2
+
+for branch in range(1, branch_count + 1):
+    print(f"Chi nhánh {branch}:")
+
+    for cls in range(1, class_count + 1):
+        while True:
+            students = int(input(f"Nhập số học viên đi học của lớp {cls}: "))
+
+            if students < 0:
+                print("Số học viên không hợp lệ. Vui lòng nhập lại.")
+            else:
+                break
+        if students == 0:
+            print("Lớp vắng toàn bộ. Bỏ qua kiểm tra trạng thái.")
+        elif students >= 20:
+            print(f"Chi nhánh {branch} - Lớp {cls}: Lớp học ổn định")
+        else:
+            print(f"Chi nhánh {branch} - Lớp {cls}: Lớp cần được nhắc nhở theo dõi")
