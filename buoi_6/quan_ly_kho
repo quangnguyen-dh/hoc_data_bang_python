@@ -1,0 +1,121 @@
+laptop = 0
+phone = 0
+tablet = 0
+
+while True:
+    print("\n=== HỆ THỐNG QUẢN LÝ TỒN KHO ===")
+    print("1. Xem báo cáo tồn kho")
+    print("2. Nhập kho")
+    print("3. Xuất kho")
+    print("4. Cảnh báo hàng tồn kho thấp")
+    print("5. Thoát chương trình")
+
+    choice = int(input("Chọn chức năng (1-5): "))
+
+    if choice == 1:
+        print("\n--- BÁO CÁO TỒN KHO ---")
+
+        laptop_stars = ""
+        for _ in range(laptop):
+            laptop_stars = laptop_stars + "*"
+        print(f"Laptop ({laptop}): {laptop_stars}")
+
+        phone_stars = ""
+        for _ in range(phone):
+            phone_stars = phone_stars + "*"
+        print(f"Điện thoại ({phone}): {phone_stars}")
+
+        tablet_stars = ""
+        for _ in range(tablet):
+            tablet_stars = tablet_stars + "*"
+        print(f"Máy tính bảng ({tablet}): {tablet_stars}")
+
+    elif choice == 2:
+        print("\n--- NHẬP KHO ---")
+        print("1. Laptop")
+        print("2. Phone")
+        print("3. Tablet")
+        item = int(input("Chọn mặt hàng (1-3): "))
+
+        if item != 1 and item != 2 and item != 3:
+            print("Mặt hàng không hợp lệ. Hủy giao dịch.")
+            continue
+
+        while True:
+            qty = int(input("Nhập số lượng cần thêm: "))
+            if qty < 0:
+                print("Số lượng không hợp lệ, vui lòng nhập lại!")
+            else:
+                break
+
+        if item == 1:
+            laptop += qty
+        elif item == 2:
+            phone += qty
+        elif item == 3:
+            tablet += qty
+
+        print("Nhập kho thành công!")
+
+    elif choice == 3:
+        print("\n--- XUẤT KHO ---")
+        print("1. Laptop")
+        print("2. Phone")
+        print("3. Tablet")
+        item = int(input("Chọn mặt hàng (1-3): "))
+
+        if item != 1 and item != 2 and item != 3:
+            print("Mặt hàng không hợp lệ. Hủy giao dịch.")
+            continue
+
+        while True:
+            qty = int(input("Nhập số lượng cần xuất: "))
+            if qty < 0:
+                print("Số lượng không hợp lệ, vui lòng nhập lại!")
+            else:
+                break
+
+        if item == 1:
+            if qty > laptop:
+                print("Không đủ hàng")
+            else:
+                laptop -= qty
+                print("Xuất kho thành công!")
+        elif item == 2:
+            if qty > phone:
+                print("Không đủ hàng")
+            else:
+                phone -= qty
+                print("Xuất kho thành công!")
+        elif item == 3:
+            if qty > tablet:
+                print("Không đủ hàng")
+            else:
+                tablet -= qty
+                print("Xuất kho thành công!")
+
+    elif choice == 4:
+        print("\n--- CẢNH BÁO TỒN KHO THẤP ---")
+        has_warning = False
+
+        if laptop < 10:
+            print(f"[CẢNH BÁO] Mặt hàng Laptop sắp hết (Chỉ còn {laptop} sản phẩm)")
+            has_warning = True
+
+        if phone < 10:
+            print(f"[CẢNH BÁO] Mặt hàng Điện thoại sắp hết (Chỉ còn {phone} sản phẩm)")
+            has_warning = True
+
+        if tablet < 10:
+            print(f"[CẢNH BÁO] Mặt hàng Máy tính bảng sắp hết (Chỉ còn {tablet} sản phẩm)")
+            has_warning = True
+
+        if not has_warning:
+            print("Tất cả mặt hàng đều có số lượng từ 10 trở lên.")
+
+    elif choice == 5:
+        print("Thoát chương trình.")
+        break
+
+    else:
+        print("Lựa chọn không hợp lệ. Vui lòng nhập từ 1 đến 5.")
